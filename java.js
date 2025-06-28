@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
             sua_mensagem_placeholder: "Your Message",
             enviar: "Send",
             vamos_trabalhar_juntos: "Let's Work Together",
-            cta_descricao: "I am available for freelance projects, job opportunities and collaborations. If you are looking for someone with experience in automation, Python development and intelligent solutions, I would be happy to talk about how I can help.",
+            cta_descricao: "I am available for work opportunities and collaborations.skills in Python and Java development.",
             enviar_email: "Send Email"
         }
     };

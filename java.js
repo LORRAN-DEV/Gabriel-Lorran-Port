@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
             meus_projetos: "My Projects",
             projetos_descricao: ".",
             projeto_titulo_1: "title",
-            projeto_descricao_1: "description.",
+            projeto_descricao_1: "REST API in Spring Boot + MySQL + Docker for: User registration. User authentication via Spring Security. Product registration. Voucher generation and management. Documentation via Swagger",
             projeto_tag_1: "tech 1",
             projeto_titulo_2: "title",
             projeto_descricao_2: "description.",

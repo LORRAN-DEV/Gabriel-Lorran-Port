@@ -54,40 +54,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
         });
-    });
+    }
 
-    // --- INÍCIO DO CÓDIGO MODIFICADO PARA O FORMULÁRIO ---
-    // Tratamento do formulário de contato
-    // Este bloco foi corrigido para enviar os dados no formato correto (URL-encoded)
-    // e para lidar com a resposta JSON do servidor.
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
+    // --- INÍCIO DO CÓDIGO MODIFICADO PARA O FORMULÁRIO (SIMPLIFICADO) ---
+    // O formulário agora terá apenas um botão, sem campos de input para envio de e-mail.
+    // A lógica de envio via fetch foi removida, pois não há dados para enviar.
+    // O botão agora apenas previne o comportamento padrão do formulário.
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
 
     if (form) { // Garante que o formulário existe na página
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener("submit", (e) => {
             e.preventDefault(); // Previne o comportamento padrão de recarregar a página
-            const formData = new FormData(form); // Coleta os dados do formulário
-            // Converte FormData para o formato URL-encoded, que o servidor espera
-            const urlEncodedData = new URLSearchParams(formData).toString(); 
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: urlEncodedData, // Envia os dados no formato correto
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' } // Define o cabeçalho correto
-                });
-
-                if (response.ok) {
-                    const result = await response.json(); // Espera uma resposta JSON do servidor
-                    status.textContent = result.message; // Exibe a mensagem de sucesso
-                    form.reset(); // Limpa o formulário
-                } else {
-                    const errorData = await response.json(); // Espera uma resposta JSON em caso de erro
-                    status.textContent = `Erro: ${errorData.message}`; // Exibe a mensagem de erro
-                }
-            } catch (error) {
-                status.textContent = `Erro de conexão: ${error.message}`; // Erro de rede
-            }
+            // Não há mais lógica de envio de e-mail aqui, pois os campos foram removidos.
+            // O botão agora serve como um CTA (Call to Action) para os links de contato.
+            status.textContent = "Por favor, use os canais de contato direto acima.";
         });
     }
     // --- FIM DO CÓDIGO MODIFICADO PARA O FORMULÁRIO ---
@@ -154,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
             projetos: "Projects",
             contato: "Contact",
             download_cv: "Download CV",
-            hi_im_lorran: "Hi, I'm Lorran! A Computer Engineering student focused on AI and Backend Development.",
+            hi_im_lorran: "Hi, I\'m Lorran! A Computer Engineering student focused on AI and Backend Development.",
             all_rights_reserved: "All rights reserved.",
             sobre_mim: "About Me",
             about_text_1: "I am looking for my first job opportunity and dream of working with AI and Machine Learning. I am 21 years old and live in Brazil. I have experience with SQL, Python, C, and Machine Learning, always looking to develop new skills and apply my knowledge.",
@@ -167,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
             seduc_desc_2: "Created interactive dashboards and automated Excel spreadsheets.",
             seduc_desc_3: "Provided technical support, improving communication and problem-solving skills.",
             formacao: "Education",
-            eng_comp_title: "Bachelor's in Computer Engineering",
+            eng_comp_title: "Bachelor\'s in Computer Engineering",
             ufpa: "UFPA - Federal University of Pará",
             ufpa_period: "February 2022 - December 2027",
             certificacoes: "Certifications",
@@ -197,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
             assunto_placeholder: "Subject",
             sua_mensagem_placeholder: "Your Message",
             enviar: "Send",
-            vamos_trabalhar_juntos: "Let's Work Together",
+            vamos_trabalhar_juntos: "Let\'s Work Together",
             cta_descricao: "Available for projects, freelance work, and opportunities in Python, Java, automation, and AI.",
             enviar_email: "Send Email"
         }

@@ -58,23 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Validação do formulário de contato
-    const contactForm = document.getElementById("contact-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            const formStatus = document.getElementById("form-status");
-            if (formStatus) {
-                formStatus.textContent = "Mensagem enviada com sucesso!";
-                formStatus.style.color = "#4CAF50";
-                contactForm.reset();
-                setTimeout(() => {
-                    formStatus.textContent = "";
-                }, 3000);
-            }
-        });
-    }
-
+   
     document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');

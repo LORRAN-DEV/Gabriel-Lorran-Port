@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (titleElement) {
         const text = titleElement.textContent;
         titleElement.textContent = "";
+        
         let i = 0;
         function typeWriter() {
             if (i < text.length) {
@@ -13,17 +14,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 setTimeout(typeWriter, 100);
             }
         }
+        
         typeWriter();
     }
-
+    
     // Menu mobile
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
+    
     if (hamburger && navMenu) {
         hamburger.addEventListener("click", function() {
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
         });
+        
+        // Fechar o menu ao clicar em um link
         document.querySelectorAll(".nav-link").forEach(link => {
             link.addEventListener("click", function() {
                 hamburger.classList.remove("active");
@@ -31,21 +36,25 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     }
-
+    
     // Destacar link ativo no menu
     const currentLocation = location.href;
-    document.querySelectorAll(".nav-link").forEach(link => {
+    const menuItems = document.querySelectorAll(".nav-link");
+    
+    menuItems.forEach(link => {
         if (link.href === currentLocation) {
             link.classList.add("active");
         }
     });
-
+    
     // Animação de scroll suave para links internos
     document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
+            
             const targetId = this.getAttribute("href");
             if (targetId === "#") return;
+            
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -54,26 +63,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
         });
-    }
-
-    // --- INÍCIO DO CÓDIGO MODIFICADO PARA O FORMULÁRIO (SIMPLIFICADO) ---
-    // O formulário agora terá apenas um botão, sem campos de input para envio de e-mail.
-    // A lógica de envio via fetch foi removida, pois não há dados para enviar.
-    // O botão agora apenas previne o comportamento padrão do formulário.
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-
-    if (form) { // Garante que o formulário existe na página
-        form.addEventListener("submit", (e) => {
-            e.preventDefault(); // Previne o comportamento padrão de recarregar a página
-            // Não há mais lógica de envio de e-mail aqui, pois os campos foram removidos.
-            // O botão agora serve como um CTA (Call to Action) para os links de contato.
-            status.textContent = "Por favor, use os canais de contato direto acima.";
+    });
+    
+    // Validação do formulário de contato
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Aqui você adicionaria a lógica para enviar o formulário
+            // Como é apenas um exemplo, vamos apenas mostrar uma mensagem
+            const formStatus = document.getElementById("form-status");
+            if (formStatus) {
+                formStatus.textContent = "Mensagem enviada com sucesso!";
+                formStatus.style.color = "#4CAF50";
+                contactForm.reset();
+                
+                // Limpar a mensagem após 3 segundos
+                setTimeout(() => {
+                    formStatus.textContent = "";
+                }, 3000);
+            }
         });
     }
-    // --- FIM DO CÓDIGO MODIFICADO PARA O FORMULÁRIO ---
-
-
     // Traduções atualizadas
     const translations = {
         pt: {

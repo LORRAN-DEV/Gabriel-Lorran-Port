@@ -72,7 +72,8 @@
                     </div>
 
                     <div class="contact-form">
-                        <form id="contact-form" action="https://formspree.io/f/mjvnekrb" method="POST">
+                        <!-- Ação do formulário alterada para apontar para o seu servidor Node.js -->
+                        <form id="contact-form" action="http://localhost:3000/send-email" method="POST">
                             <input type="text" name="name" placeholder="Seu Nome" required>
                             <input type="email" name="email" placeholder="Seu Email" required>
                             <input type="text" name="subject" placeholder="Assunto">

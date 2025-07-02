@@ -72,12 +72,8 @@
                     </div>
 
                     <div class="contact-form">
-                        <!-- Ação do formulário alterada para apontar para o seu servidor Node.js -->
-                        <form id="contact-form" action="http://localhost:3000/send-email" method="POST">
-                            <input type="text" name="name" placeholder="Seu Nome" required>
-                            <input type="email" name="email" placeholder="Seu Email" required>
-                            <input type="text" name="subject" placeholder="Assunto">
-                            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                        <!-- O formulário agora terá apenas um botão para direcionar o usuário -->
+                        <form id="contact-form" action="#" method="GET">
                             <button type="submit" data-key="enviar">Enviar</button>
                             <p id="form-status"></p>
                         </form>

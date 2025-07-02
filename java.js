@@ -1,5 +1,3 @@
-
-
 // Esperar que o DOM seja completamente carregado
 document.addEventListener("DOMContentLoaded", function() {
     // Efeito de digitação para o título
@@ -58,33 +56,41 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-   
-    document.addEventListener("DOMContentLoaded", function() {
+    // --- INÍCIO DO CÓDIGO MODIFICADO PARA O FORMULÁRIO ---
+    // Tratamento do formulário de contato
+    // Este bloco foi corrigido para enviar os dados no formato correto (URL-encoded)
+    // e para lidar com a resposta JSON do servidor.
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
 
-    if (form) { // evita erros em páginas sem o formulário
+    if (form) { // Garante que o formulário existe na página
         form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const data = new FormData(form);
+            e.preventDefault(); // Previne o comportamento padrão de recarregar a página
+            const formData = new FormData(form); // Coleta os dados do formulário
+            // Converte FormData para o formato URL-encoded, que o servidor espera
+            const urlEncodedData = new URLSearchParams(formData).toString(); 
+
             try {
                 const response = await fetch(form.action, {
                     method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
+                    body: urlEncodedData, // Envia os dados no formato correto
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' } // Define o cabeçalho correto
                 });
+
                 if (response.ok) {
-                    status.textContent = 'Mensagem enviada com sucesso!';
-                    form.reset();
+                    const result = await response.json(); // Espera uma resposta JSON do servidor
+                    status.textContent = result.message; // Exibe a mensagem de sucesso
+                    form.reset(); // Limpa o formulário
                 } else {
-                    status.textContent = 'Erro ao enviar mensagem. Tente novamente.';
+                    const errorData = await response.json(); // Espera uma resposta JSON em caso de erro
+                    status.textContent = `Erro: ${errorData.message}`; // Exibe a mensagem de erro
                 }
             } catch (error) {
-                status.textContent = 'Erro de conexão. Verifique sua internet.';
+                status.textContent = `Erro de conexão: ${error.message}`; // Erro de rede
             }
         });
     }
-});
+    // --- FIM DO CÓDIGO MODIFICADO PARA O FORMULÁRIO ---
 
 
     // Traduções atualizadas

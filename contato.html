@@ -93,28 +93,6 @@
         </div>
     </footer>
 
-    <!-- Script para Formspree -->
-    <script>
-        const form = document.getElementById('contact-form');
-        const status = document.getElementById('form-status');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const data = new FormData(form);
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-                status.textContent = 'Mensagem enviada com sucesso!';
-                form.reset();
-            } else {
-                status.textContent = 'Erro ao enviar mensagem. Tente novamente.';
-            }
-        });
-    </script>
-
     <script src="java.js"></script>
 </body>
 </html>

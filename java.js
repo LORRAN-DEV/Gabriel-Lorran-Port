@@ -1,41 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const translations = {
-        "pt": {
-            "home": "Home",
-            "sobre": "Sobre",
-            "projetos": "Projetos",
-            "contato": "Contato",
-            "hi_im_lorran": "Olá, eu sou o Lorran! Estudante de engenharia da computação. Foco nas áreas de IA e Desenvolvimento Back-end.",
-            "download_cv": "Download CV",
-            "all_rights_reserved": "©2025 Gabriel Lorran. Todos os direitos reservados."
-        },
-        "en": {
-            "home": "Home",
-            "sobre": "About",
-            "projetos": "Projects",
-            "contato": "Contact",
-            "hi_im_lorran": "Hello, I'm Lorran! Computer engineering student focusing on AI and Backend Development.",
-            "download_cv": "Download CV",
-            "all_rights_reserved": "©2025 Gabriel Lorran. All rights reserved."
-        }
-    };
 
-    function setLanguage(lang) {
-        document.querySelectorAll("[data-key]").forEach(element => {
-            const key = element.getAttribute("data-key");
-            if (translations[lang][key]) {
-                element.textContent = translations[lang][key];
-            }
-        });
-    }
 
-    document.querySelectorAll(".lang-button").forEach(button => {
-        button.addEventListener("click", () => {
-            const selectedLang = button.getAttribute("data-lang");
-            setLanguage(selectedLang);
-        });
-    });
-});
 // Esperar que o DOM seja completamente carregado
 document.addEventListener("DOMContentLoaded", function() {
     // Efeito de digitação para o título

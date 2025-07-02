@@ -1,163 +1,120 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gabriel Lorran |</title>
-        <link rel="stylesheet" href="style.css">
-        <!-- Font Awesome para ícones -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
-    <body>
-        <!-- Header e Navegação -->
-        <header>
-            <div class="container header-container">
-                <a href="index.html" class="logo">Gabriel Lorran</a>
-                <nav>
-                    <div class="nav-menu">
-                        <ul class="nav-list">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link" data-key="home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="sobre.html" class="nav-link" data-key="sobre">Sobre</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="projetos.html" class="nav-link" data-key="projetos">Projetos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contato.html" class="nav-link" data-key="contato">Contato</a>
-                            </li>
-                        </ul>
-                        <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/gabriel-lorran-b91baa336?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2CMDYbrwR66zqcV0bdQVjw%3D%3D" target="_blank" class="social-icon">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/LORRAN-DEV" target="_blank" class="social-icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="mailto:glorran0810@gmail.com" class="social-icon">
-                                <i class="far fa-envelope"></i>
-                            </a>
-                        </div>
-                        <div class="language-selector">
-                            <button class="lang-button" data-lang="pt">PT</button>
-                            <button class="lang-button" data-lang="en">EN</button>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Lorran | Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Gabriel Lorran</a>
+            <nav>
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" data-key="home">Home</a></li>
+                        <li><a href="sobre.html" data-key="sobre">Sobre</a></li>
+                        <li><a href="projetos.html" data-key="projetos">Projetos</a></li>
+                        <li><a href="contato.html" data-key="contato">Contato</a></li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/gabriel-lorran-b91baa336" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/LORRAN-DEV" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:glorran0810@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
                     </div>
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- Conteúdo Principal -->
-        <main>
-            <section>
-                <div class="container">
-                    <h2 class="section-title" data-key="entre_em_contato">Entre em Contato</h2>
-                    <p class="section-description" data-key="contato_descricao">Tem alguma pergunta ou proposta? Estou sempre aberta a novas oportunidades e colaborações.
-                    Entre em contato comigo através do formulário abaixo ou pelos canais diretos.
-                </p>
-                    <div class="contact-container">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h4 data-key="email_title">Email</h4>
-                                    <a href="mailto:glorran0810@gmail.com">glorran0810@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h4 data-key="linkedin_title">LinkedIn</h4>
-                                    <a href="https://linkedin.com/in/gabriel-lorran-b91baa336" target="_blank">linkedin.com/in/gabriel-lorran</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h4 data-key="whatsapp_title">WhatsApp</h4>
-                                    <a href="https://wa.me/91986095201" target="_blank" data-key="enviar_mensagem">Enviar mensagem</a>
-                                </div>
-                            </div>
-                            
-                            </div>
-                        </div>
-                        <div class="contact-form">
-                            <form id="contact-form">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Seu Nome" required data-key="seu_nome_placeholder">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Seu Email" required data-key="seu_email_placeholder">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Assunto" data-key="assunto_placeholder">
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Sua Mensagem" required data-key="sua_mensagem_placeholder"></textarea>
-                                </div>
-                                <button type="submit" class="btn" data-key="enviar">Enviar</button>
-                                <p id="form-status" style="margin-top: 15px;"></p>
-                            </form>
-                        </div>
+                    <div class="language-selector">
+                        <button class="lang-button" data-lang="pt">PT</button>
+                        <button class="lang-button" data-lang="en">EN</button>
                     </div>
                 </div>
-            </section>
-            <section style="padding: 60px 0; background-color: var(--bg-secondary);">
-                <div class="container">
-                    <h2 class="section-title" data-key="vamos_trabalhar_juntos">Vamos Trabalhar Juntos</h2>
-                    <div class="cta-container">
-                        <p class="cta-text" data-key="cta_descricao">Estou disponível para oportunidades de trabalho e colaborações.
-                        competecias em desenvolvimento Python e Java.
-                    </p>
-                        <div class="cta-buttons">
-                            <a href="mailto:glorran0810@gmail.com" class="btn" data-key="enviar_email">Enviar Email</a>
-                            <a href="me/cv lorran.pdf" class="btn btn-outline" download data-key="download_cv">Download CV</a>
-                        </div>
-                    </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
-            </section>
-        </main>
-        <!-- Footer -->
-        <footer>
-            <div class="container footer-content">
-                <div class="footer-logo">Gabriel Lorran</div>
-                <div class="footer-social">
-                    <a href="https://github.com" target="_blank" class="footer-social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/gabriel-lorran-b91baa336?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B2CMDYbrwR66zqcV0bdQVjw%3D%3D" target="_blank" class="footer-social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:GLORRAN0810@GMIAL.COM" class="footer-social-icon">
-                        <i class="far fa-envelope"></i>
-                    </a>
-                    <a href="https://wa.me/91986095201" target="_blank" class="footer-social-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html" class="footer-link" data-key="home">Home</a>
-                    <a href="sobre.html" class="footer-link" data-key="sobre">Sobre</a>
-                    <a href="projetos.html" class="footer-link" data-key="projetos">Projetos</a>
-                    <a href="contato.html" class="footer-link" data-key="contato">Contato</a>
-                </div>
-                <div class="footer-copyright" data-key="all_rights_reserved">&copy;2025 Gabriel Lorran. Todos os direitos reservados.
-            </div>
-            </div>
-        </footer>
-         <!-- JavaScript -->
-        <script src="java.js"></script>
-        </body>
-</html>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Conteúdo principal -->
+    <main>
+        <section>
+            <div class="container">
+                <h2 data-key="entre_em_contato">Entre em Contato</h2>
+                <p data-key="contato_descricao">Envie uma mensagem ou utilize os canais abaixo para contato direto.</p>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 data-key="email_title">Email</h4>
+                                <a href="mailto:glorran0810@gmail.com" target="_blank">glorran0810@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <div>
+                                <h4 data-key="linkedin_title">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/gabriel-lorran-b91baa336" target="_blank">linkedin.com/in/gabriel-lorran</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4 data-key="whatsapp_title">WhatsApp</h4>
+                                <a href="https://wa.me/5591986095201" target="_blank" data-key="enviar_mensagem">Enviar mensagem</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contact-form" action="https://formspree.io/f/mjvnekrb" method="POST">
+                            <input type="text" name="name" placeholder="Seu Nome" required>
+                            <input type="email" name="email" placeholder="Seu Email" required>
+                            <input type="text" name="subject" placeholder="Assunto">
+                            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                            <button type="submit" data-key="enviar">Enviar</button>
+                            <p id="form-status"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy;2025 Gabriel Lorran. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para Formspree -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                status.textContent = 'Mensagem enviada com sucesso!';
+                form.reset();
+            } else {
+                status.textContent = 'Erro ao enviar mensagem. Tente novamente.';
+            }
+        });
+    </script>
+
+    <script src="java.js"></script>
+</body>
+</html>

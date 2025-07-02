@@ -197,24 +197,27 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     function setLanguage(lang) {
-        document.documentElement.lang = lang;
+        document.documentElement.lang = lang; // Define o atributo lang da tag html
         document.querySelectorAll("[data-key]").forEach(element => {
             const key = element.getAttribute("data-key");
             if (translations[lang][key]) {
                 element.textContent = translations[lang][key];
             }
         });
+        // Salva a preferência de idioma no localStorage
         localStorage.setItem("preferredLanguage", lang);
     }
 
-    // Botões de idioma
+    // Adiciona event listeners aos botões de idioma
     document.querySelectorAll(".lang-button").forEach(button => {
         button.addEventListener("click", function() {
             setLanguage(this.getAttribute("data-lang"));
         });
     });
 
-    // Carrega o idioma salvo ou padrão
+    // Carrega o idioma preferido do usuário ou define o padrão
     const savedLanguage = localStorage.getItem("preferredLanguage") || "pt";
     setLanguage(savedLanguage);
 });
+
+
